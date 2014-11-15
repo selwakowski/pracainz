@@ -3,8 +3,12 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jsf"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/primefaces-5.1.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/objectify"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/all-themes-1.0.10.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/javax.faces-2.2.4.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jboss-el-api_2.2_spec.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jboss-el.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/objectify-5.1.1.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
