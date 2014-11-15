@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:x="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:body>
+	<ui:composition template="/template/common/commonLayout.xhtml">
+
+		<ui:define name="content">
+
+			<p:fieldset legend="Nowy użytkownik" style="margin-bottom:40px">
+				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+					<p:outputLabel for="userName" value="Nazwa użytkownika" />
+					<p:inputText id="userName" value="#{user.name}">
+					</p:inputText>
+					<p:outputLabel for="userType" value="Typ użytkownika" />
+					<p:selectOneMenu id="userType" value="#{user.userTypeId}">
+						<x:selectItems value="#{loginbean.userTypes}" />
+					</p:selectOneMenu>
+				</h:panelGrid>
+				<p:commandButton value="Utwórz" action="#{user.create}" update="page" />
+			</p:fieldset>
+			<p:link outcome="login" value="Istniejący użytkownik" />
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>
