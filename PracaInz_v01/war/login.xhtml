@@ -16,14 +16,14 @@
 					<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
 						<p:outputLabel for="existingUser" value="Wybierz:" />
 						<p:selectOneMenu id="existingUser" value="#{user.name}">
-							<x:selectItems value="#{loginbean.existingUsers}" />
+							<x:selectItems value="#{loginBean.existingUsers}" />
 						</p:selectOneMenu>
 					</h:panelGrid>
 					<p:commandButton actionListener="#{user.login}" value="Zaloguj" update="page" />
 				</p:fieldset>
 
 				<br></br>
-				<p:link outcome="newUser" value="Nowy uÅ¼ytkownik" />
+				<p:link outcome="newUser" value="Nowy u¿ytkownik" />
 
 		</ui:define>
 
