@@ -15,53 +15,35 @@ public class UserBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String name;
+	private String login;
 	private UserType userType;
+	private String email;
+	private String mobile;
 
-	
-
-	public int getUserTypeId() {
-		return 0;
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public UserType getUserType() {
+		return userType;
+	}
+	public void setUserType(UserType userType) {
+		this.userType = userType;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
-	public void setUserTypeId(int userTypeId) {
-		
-		for (UserType userType : UserType.values()) {
-			if (userType.getId() == userTypeId) {
-				this.userType = userType;
-			}
-		}
-		System.out.println("set userType: "+userType);
 
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public void setExistingUser(String name) {
-		
-	}
-
-	public String getExistingUser() {
-		return "";
-	}
-
-	public void create() {
-		UserDao userDao = new UserDao();
-		System.out.println("userType: "+userType);
-		userDao.createUser(name, userType.getId());
-	}
-
-	public void login() {
-		UserDao userDao = new UserDao();
-		UserDB userDB = userDao.getUser(name);
-		if (userDB != null) {
-			setUserTypeId(userDB.getTypeId());
-		}
-	}
 }

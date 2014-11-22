@@ -12,19 +12,34 @@
 
 		<ui:define name="content">
 
-			<p:fieldset legend="Nowy uÅ¼ytkownik" style="margin-bottom:40px">
+			<p:fieldset legend="Nowy u¿ytkownik" style="margin-bottom:40px">
 				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-					<p:outputLabel for="userName" value="Nazwa uÅ¼ytkownika" />
-					<p:inputText id="userName" value="#{user.name}">
+
+					<p:outputLabel for="userName" value="Nazwa u¿ytkownika" />
+					<p:inputText id="userName" value="#{loginBean.login}">
 					</p:inputText>
-					<p:outputLabel for="userType" value="Typ uÅ¼ytkownika" />
-					<p:selectOneMenu id="userType" value="#{user.userTypeId}">
-						<x:selectItems value="#{loginbean.userTypes}" />
+
+					<p:outputLabel for="userPass" value="Has³o" />
+					<p:inputText id="userPass" value="#{loginBean.password}">
+					</p:inputText>
+
+					<p:outputLabel for="userEmail" value="e-mail" />
+					<p:inputText id="userName" value="#{loginBean.email}">
+					</p:inputText>
+
+					<p:outputLabel for="userMobile" value="Telefon" />
+					<p:inputText id="userName" value="#{loginBean.mobile}">
+					</p:inputText>
+
+					<p:outputLabel for="userType" value="Typ u¿ytkownika" />
+					<p:selectOneMenu id="userType" value="#{loginBean.userTypeId}">
+						<x:selectItems value="#{loginBean.userTypes}" />
 					</p:selectOneMenu>
+ 
 				</h:panelGrid>
-				<p:commandButton value="UtwÃ³rz" action="#{user.create}" update="page" />
+				<p:commandButton value="Utwórz" action="#{loginBean.create}" update="page" />
 			</p:fieldset>
-			<p:link outcome="login" value="IstniejÄ…cy uÅ¼ytkownik" />
+			<p:link outcome="login" value="Istniej¹cy u¿ytkownik" />
 		</ui:define>
 	</ui:composition>
 </h:body>

@@ -7,6 +7,7 @@ import com.googlecode.objectify.annotation.Id;
 public class UserDB {
 
 	@Id String name;
+	String password;
 	int typeId;
 	
 	@SuppressWarnings("unused")
