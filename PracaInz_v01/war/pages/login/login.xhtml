@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:x="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:body>
+
+	<ui:composition template="/template/common/commonLayout.xhtml">
+		<ui:define name="content">
+			<h:form>
+				<p:fieldset legend="#{msg['legend.login']}"
+					style="margin-bottom:40px">
+					<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+
+						<p:outputLabel for="userName" value="#{msg['user.name']}" />
+						<p:inputText id="userName" value="#{loginBean.name}" />
+
+						<p:outputLabel for="userPass" value="#{msg['password']}" />
+						<p:inputText id="userPass" value="#{loginBean.password}" />
+
+					</h:panelGrid>
+					<p:commandButton id="loginButton" action="#{loginBean.doLogin}"
+						value="#{msg['login']}" />
+				</p:fieldset>
+
+				<p:separator />
+				<h:commandLink action="#{navigationBean.toNewUserRedirect}"
+					value="#{msg['user.new']}" />
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+
+</html>

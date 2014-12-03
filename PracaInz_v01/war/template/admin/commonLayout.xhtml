@@ -11,19 +11,16 @@
 </h:head>
 
 <h:body>
+	<h:form>
 	<p:layout id="page" fullPage="true">
 		<p:layoutUnit position="north" size="180" id="header">
 			<ui:insert name="header">
-				<ui:include src="/template/common/commonHeader.xhtml" />
+				<ui:include src="/template/admin/commonHeader.xhtml" />
 			</ui:insert>
 		</p:layoutUnit>
 		<p:layoutUnit position="center" id="content">
-			<p:tooltip />
-			<h:form>
-				<p:messages id="messages" autoUpdate="true" closable="true" />
-			</h:form>
 			<ui:insert name="content">
-				<ui:include src="/template/common/commonContent.xhtml" />
+				<ui:include src="/template/admin/commonContent.xhtml" />
 			</ui:insert>
 		</p:layoutUnit>
 		<p:layoutUnit position="south" size="80" id="footer">
@@ -32,6 +29,7 @@
 			</ui:insert>
 		</p:layoutUnit>
 	</p:layout>
+	</h:form>
 </h:body>
 
 </html>

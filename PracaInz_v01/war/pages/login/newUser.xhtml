@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:x="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:body>
+	<ui:composition template="/template/common/commonLayout.xhtml">
+
+		<ui:define name="content">
+			<h:form>
+
+				<p:fieldset legend="#{msg['legend.newuser']}"
+					style="margin-bottom:40px">
+					<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+
+						<p:outputLabel for="userName" value="#{msg['user.name']}" />
+						<p:inputText id="userName" value="#{loginBean.name}" size="20"
+							required="true" requiredMessage="#{msg['name.required']}"
+							validator="#{loginBean.checkUserExists}">
+						</p:inputText>
+
+						<p:outputLabel for="userPass" value="#{msg['password']}" />
+						<p:inputText id="userPass" value="#{loginBean.password}"
+							minimum="5" required="true"
+							requiredMessage="#{msg['password.required']}">
+						</p:inputText>
+
+						<p:outputLabel for="userEmail" value="#{msg['email']}" />
+						<p:inputText id="userEmail" value="#{loginBean.email}"
+							validatorMessage="#{msg['email.invalid']}">
+							<x:validateRegex
+								pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+						</p:inputText>
+
+						<p:outputLabel for="userMobile" value="#{msg['mobile']}" />
+						<p:inputText id="userMobile" value="#{loginBean.mobile}"
+							required="true" requiredMessage="#{msg['mobile.required']}">
+						</p:inputText>
+
+						<p:outputLabel for="userType" value="#{msg['user.type']}" />
+						<p:selectOneMenu id="userType" value="#{loginBean.userTypeId}">
+							<x:selectItems value="#{loginBean.userTypes}" />
+						</p:selectOneMenu>
+
+					</h:panelGrid>
+					<p:commandButton value="#{msg['create']}"
+						action="#{loginBean.doCreate}" />
+				</p:fieldset>
+			</h:form>
+			<h:form>
+				<h:commandLink action="#{navigationBean.toLoginRedirect}"
+					value="#{msg['user.existing']}" />
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

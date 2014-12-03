@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.dao.db.UserDB;
+import edu.type.UserType;
+import edu.util.PasswordUtils;
 
 public class UserDao {
 
@@ -15,13 +17,17 @@ public class UserDao {
 		return userList;
 	}
 
-	public void createUser (String name, int typeId) {
-		Object userDB = new UserDB(name, typeId);
-		OfyService.ofy().save().entity(userDB).now();
-	}
-
 	public UserDB getUser(String name) {
 		UserDB userDB = OfyService.ofy().load().type(UserDB.class).id(name).now();
 		return userDB;
+	}
+
+	public UserDB createUser(String name, String password, UserType userType,
+			String mobile, String email) {
+		String hash = PasswordUtils.hashPassword(password);
+		UserDB userDB = new UserDB(name, userType.getId(), hash, mobile, email);
+		OfyService.ofy().save().entity(userDB).now();
+		return userDB;
+		
 	}
 }

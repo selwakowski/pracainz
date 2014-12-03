@@ -1,61 +1,101 @@
 package edu.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
+import javax.faces.validator.ValidatorException;
 
 import edu.dao.UserDao;
 import edu.dao.db.UserDB;
 import edu.type.UserType;
+import edu.util.PasswordUtils;
 
-@ManagedBean(name="loginBean")
-@RequestScoped
-public class LoginBean {
-		
-	private String login;
+@ManagedBean(name = "loginBean")
+@SessionScoped
+public class LoginBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	private String name;
 	private String email;
 	private String mobile;
 	private String password;
 	private UserType userType;
-	
-	@ManagedProperty(value="#{userBean}")
+
+	@ManagedProperty(value = "#{userBean}")
 	private UserBean userBean;
-	
+
 	public void setUserBean(UserBean userBean) {
 		this.userBean = userBean;
 	}
 
-	public void create() {
-		UserDao userDao = new UserDao();
-		System.out.println("userType: "+userType);
-		userDao.createUser(login, userType.getId());
+	@ManagedProperty(value = "#{navigationBean}")
+	private NavigationBean navigationBean;
+
+	public void setNavigationBean(NavigationBean navigationBean) {
+		this.navigationBean = navigationBean;
 	}
 
-	public void login() {
+	public String doCreate() {
 		UserDao userDao = new UserDao();
-		UserDB userDB = userDao.getUser(login);
-		if (userDB != null) {
-			setUserTypeId(userDB.getTypeId());
+		UserDB userDB = userDao.createUser(name, password, userType, mobile,
+				email);
+		userBean.propagate(userDB);
+		return navigationBean.toWelcome();
+	}
+
+	public String doLogin() {
+		if (name == null || "".equals(name)) {
+			return loginError("name.required");
 		}
+		if (password == null || "".equals(password)) {
+			return loginError("password.required");
+		}
+		
+		UserDao userDao = new UserDao();
+		UserDB userDB = userDao.getUser(name);
+
+		if (userDB != null) {
+			if (PasswordUtils.isPasswordMatch(password, userDB.getPassword())) {
+				userBean.propagate(userDB);
+				return navigationBean.toWelcomeRedirect();
+			}
+		}
+		return loginError("login.invalid");
+		// String userName = (String) component.getAttributes().get("userName");
+	}
+
+	private String loginError(String message) {
+		ResourceBundle bundle = ResourceBundle.getBundle("resources/message");
+		FacesMessage msg = new FacesMessage(bundle.getString(message),
+				"ERROR MSG");
+		msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+		FacesContext.getCurrentInstance().addMessage(null, msg);
+		return navigationBean.toLogin();
 	}
 
 	public List<SelectItem> getUserTypes() {
 		List<SelectItem> userTypes = new ArrayList<SelectItem>();
-		
+
 		for (UserType userType : UserType.values()) {
-			SelectItem selectItem = new SelectItem(userType.getId(), userType.getName());
+			SelectItem selectItem = new SelectItem(userType.getId(),
+					userType.getName());
 			userTypes.add(selectItem);
 		}
 		return userTypes;
 	}
-	
+
 	public List<SelectItem> getExistingUsers() {
 		List<SelectItem> existingUsers = new ArrayList<SelectItem>();
-		
+
 		UserDao userDao = new UserDao();
 		List<UserDB> existingUsersDB = userDao.getExistingUsers();
 		for (UserDB userDB : existingUsersDB) {
@@ -65,20 +105,25 @@ public class LoginBean {
 		return existingUsers;
 	}
 
-	public void setUserTypeId(int userTypeId) {
-		
-		for (UserType userType : UserType.values()) {
-			if (userType.getId() == userTypeId) {
-				this.userType = userType;
-			}
+	public void checkUserExists(FacesContext ctx, UIComponent component,
+			Object value) throws ValidatorException {
+		String userName = value.toString();
+		UserDao userDao = new UserDao();
+		if (userDao.getUser(userName) != null) {
+			ResourceBundle bundle = ResourceBundle.getBundle("message");
+			throw new ValidatorException(new FacesMessage(
+					bundle.getString("user.exists")));
 		}
-	}	
-
-	public int getUserTypeId() {
-		return 0;
 	}
 
-	
+	public void checkUserPassword(FacesContext ctx, UIComponent component,
+			Object value) throws ValidatorException {
+	}
+
+	public int getUserTypeId() {
+		return 2;
+	}
+
 	public String getPassword() {
 		return "";
 	}
@@ -87,12 +132,12 @@ public class LoginBean {
 		this.password = password;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getName() {
+		return name;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {

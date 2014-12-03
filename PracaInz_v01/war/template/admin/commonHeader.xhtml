@@ -6,11 +6,17 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
-
 <body>
 	<ui:composition>
-		<h:outputLabel
-			value="Jarosław Selwakowski - Praca Inżynierska 2014" />
+
+		<p:panel id="header_panel" header="Wyższa Szkoła Informatyki i Umiejętności" style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="10">
+				<p:graphicImage value="/resources/graph/logo.jpg" />
+				<h:outputText value="Witaj Administratorze" />
+			</h:panelGrid>
+		</p:panel>
 	</ui:composition>
 </body>
 </html>
+
+
