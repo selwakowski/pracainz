@@ -8,7 +8,7 @@
 	xmlns:x="http://java.sun.com/jsf/core"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:body>
-	<ui:composition template="/template/common/commonLayout.xhtml">
+	<ui:composition template="/template/common/layout.xhtml">
 
 		<ui:define name="content">
 			<h:form>
@@ -19,8 +19,13 @@
 
 						<p:outputLabel for="userName" value="#{msg['user.name']}" />
 						<p:inputText id="userName" value="#{loginBean.name}" size="20"
-							required="true" requiredMessage="#{msg['name.required']}"
+							required="true" requiredMessage="#{msg['user.name.required']}"
 							validator="#{loginBean.checkUserExists}">
+						</p:inputText>
+
+						<p:outputLabel for="realName" value="#{msg['user.realname']}" />
+						<p:inputText id="realName" value="#{loginBean.realName}" size="40"
+									 required="true" requiredMessage="#{msg['user.realname.required']}">
 						</p:inputText>
 
 						<p:outputLabel for="userPass" value="#{msg['password']}" />

@@ -22,10 +22,10 @@ public class UserDao {
 		return userDB;
 	}
 
-	public UserDB createUser(String name, String password, UserType userType,
+	public UserDB createUser(String name, String realName, String password, UserType userType,
 			String mobile, String email) {
 		String hash = PasswordUtils.hashPassword(password);
-		UserDB userDB = new UserDB(name, userType.getId(), hash, mobile, email);
+		UserDB userDB = new UserDB(name, realName, userType.getId(), hash, mobile, email);
 		OfyService.ofy().save().entity(userDB).now();
 		return userDB;
 		

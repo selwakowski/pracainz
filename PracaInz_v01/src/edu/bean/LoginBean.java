@@ -13,6 +13,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.faces.validator.ValidatorException;
+import javax.inject.Named;
 
 import edu.dao.UserDao;
 import edu.dao.db.UserDB;
@@ -20,11 +21,13 @@ import edu.type.UserType;
 import edu.util.PasswordUtils;
 
 @ManagedBean(name = "loginBean")
+//@Named("loginBean")
 @SessionScoped
 public class LoginBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String name;
+	private String realName;
 	private String email;
 	private String mobile;
 	private String password;
@@ -46,7 +49,11 @@ public class LoginBean implements Serializable {
 
 	public String doCreate() {
 		UserDao userDao = new UserDao();
-		UserDB userDB = userDao.createUser(name, password, userType, mobile,
+		UserDB userDB = userDao.getUser(name);
+		if (userDB != null) {
+			return loginError("user.exists");
+		}
+		userDB = userDao.createUser(name, realName, password, userType, mobile,
 				email);
 		userBean.propagate(userDB);
 		return navigationBean.toWelcome();
@@ -54,7 +61,7 @@ public class LoginBean implements Serializable {
 
 	public String doLogin() {
 		if (name == null || "".equals(name)) {
-			return loginError("name.required");
+			return loginError("user.name.required");
 		}
 		if (password == null || "".equals(password)) {
 			return loginError("password.required");
@@ -120,6 +127,14 @@ public class LoginBean implements Serializable {
 			Object value) throws ValidatorException {
 	}
 
+	public void setUserTypeId(int typeId) {
+		for (UserType type : UserType.values()) {
+			if (type.getId() == typeId) {
+				this.userType = type;
+			}
+		}
+	}
+
 	public int getUserTypeId() {
 		return 2;
 	}
@@ -154,5 +169,12 @@ public class LoginBean implements Serializable {
 
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+	public String getRealName() {
+		return realName;
+	}
+
+	public void setRealName(String realName) {
+		this.realName = realName;
 	}
 }

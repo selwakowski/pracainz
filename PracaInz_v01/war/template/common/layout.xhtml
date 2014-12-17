@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="/template/common/common-style.css" library="css" />
+</h:head>
+
+<h:body>
+	<p:layout id="page" fullPage="true">
+		<p:layoutUnit position="north" size="300" id="header">
+			<ui:insert name="header">
+				<ui:include src="/template/common/header.xhtml" />
+			</ui:insert>
+		</p:layoutUnit>
+		<p:layoutUnit position="center" id="content">
+			<p:tooltip />
+			<h:form>
+				<p:messages id="messages" autoUpdate="true" closable="true" />
+			</h:form>
+			<ui:insert name="content">
+				<ui:include src="/template/common/content.xhtml" />
+			</ui:insert>
+		</p:layoutUnit>
+		<p:layoutUnit position="south" size="80" id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/template/common/footer.xhtml" />
+			</ui:insert>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+
+</html>

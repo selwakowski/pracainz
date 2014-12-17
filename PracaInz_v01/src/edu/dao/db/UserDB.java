@@ -7,6 +7,8 @@ import com.googlecode.objectify.annotation.Id;
 public class UserDB {
 
 	@Id String name;
+
+	String realName;
 	String password;
 	int typeId;
 	String mobile;
@@ -15,8 +17,9 @@ public class UserDB {
 	@SuppressWarnings("unused")
 	private UserDB() {}
 	
-	public UserDB(String name, int typeId, String password, String mobile, String email) {
+	public UserDB(String name, String realName, int typeId, String password, String mobile, String email) {
 		this.name = name;
+		this.realName = realName;
 		this.typeId = typeId;
 		this.password = password;
 		this.mobile = mobile;
@@ -62,4 +65,11 @@ public class UserDB {
 		this.typeId = typeId;
 	}
 
+	public String getRealName() {
+		return realName;
+	}
+
+	public void setRealName(String realName) {
+		this.realName = realName;
+	}
 }

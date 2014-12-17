@@ -1,0 +1,9 @@
+body {
+    font-size: 70%;
+}
+.ui-widget {
+    font-size: 70%;
+}
+.ui-widget .ui-widget {
+    font-size: 80%;
+}

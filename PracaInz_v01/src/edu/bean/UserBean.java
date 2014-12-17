@@ -15,10 +15,18 @@ public class UserBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String name;
+	private String realName;
 	private UserType userType;
 	private String email;
 	private String mobile;
 
+	public String getRealName() {
+		return realName;
+	}
+
+	public void setRealName(String realName) {
+		this.realName = realName;
+	}
 	public String getName() {
 		return name;
 	}
@@ -46,6 +54,7 @@ public class UserBean implements Serializable {
 	public void propagate(UserDB userDB) {
 		setUserTypeId(userDB.getTypeId());
 		this.name = userDB.getName();
+		this.realName = userDB.getRealName();
 		this.mobile = userDB.getMobile();
 		this.email = userDB.getEmail();
 		

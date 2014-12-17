@@ -50,6 +50,12 @@ public class NavigationBean implements Serializable {
 		}
 	}
 
+	public String toUserList() {
+		return "/pages/admin/userList.xhtml";
+	}
+	public String toVinylList() {
+		return "/pages/admin/VinylList.xhtml";
+	}
 	public String toWelcomeRedirect() {
 		return toWelcome()+REDIRECT;
 	}
