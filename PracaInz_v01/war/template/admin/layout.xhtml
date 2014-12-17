@@ -16,7 +16,7 @@
 	<ui:composition template="/template/common/layout.xhtml">
 		<ui:define name="header">
 			<ui:include src="/template/common/header.xhtml" />
-			<h:form>
+			<h:form id="menuForm">
 				<p:menubar>
 					<p:menuitem value="#{msg['users']}" action="#{navigationBean.toUserList}" icon="ui-icon-document" />
 					<p:menuitem value="#{msg['vinyls.my']}" action="#{navigationBean.toVinylList}" icon="ui-icon-document" />

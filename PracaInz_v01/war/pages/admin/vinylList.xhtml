@@ -61,25 +61,23 @@
 
 
 			            <h:outputText value="#{msg['vinyl.booked']}:" />
-			            <h:outputText value="#{'vinyl.booked'}" />
+			            <h:outputText value="#{vinyl.booked}" />
 
 			            <h:outputText value="#{msg['vinyl.bookedby']}:" />
 			            <h:outputText value="#{vinyl.bookedby}" />
 
 					<x:facet name="footer">
-		                <p:commandButton action="navigationBean.toVinylEdit" icon="ui-icon-search">
+		                <p:commandButton value="#{msg['edit']}" action="#{vinylListBean.editVinyl}" icon="ui-icon-search">
 		                    <x:setPropertyActionListener 
 		                    	value="#{vinyl}" 
 		                    	target="#{vinylListBean.selectedVinyl}" />
 		                </p:commandButton>
-		                <p:commandButton action="newVinyl" icon="ui-icon-search">
-		                </p:commandButton>							                
 					</x:facet>
 
 				</p:panelGrid>
 
 			</p:carousel>
-			<p:commandButton type="button" action="#{vinylListBean.bookedby}" value="#{msg['create']}" icon="ui-icon-document" />
+			<p:commandButton action="#{vinylListBean.newVinyl}" value="#{msg['create']}" icon="ui-icon-document" />
 			</p:panelGrid>
 			</h:form>
 		</ui:define>

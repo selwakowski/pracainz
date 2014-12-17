@@ -53,6 +53,10 @@ public class VinylListBean implements Serializable {
         return vinylList;
     }
 
+    public String editVinyl() {
+        return navigationBean.toVinylEdit();
+    }
+
     public String newVinyl() {
         vinylBean.reset();
         return navigationBean.toVinylEdit();

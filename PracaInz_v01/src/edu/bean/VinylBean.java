@@ -21,6 +21,7 @@ public class VinylBean implements Serializable {
     private String title;
     private int price;
     private String booked;
+    private String bookedby;
 	private String description;
     private List<TrackDB> sideA;
     private List<TrackDB> sideB;
@@ -114,4 +115,12 @@ public class VinylBean implements Serializable {
 	public void setBooked(String booked) {
 		this.booked = booked;
 	}
+
+    public String getBookedby() {
+        return bookedby;
+    }
+
+    public void setBookedby(String bookedby) {
+        this.bookedby = bookedby;
+    }
 }
