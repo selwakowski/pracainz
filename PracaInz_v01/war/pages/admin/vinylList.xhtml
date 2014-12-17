@@ -10,10 +10,11 @@
 <h:body>
 	<ui:composition template="/template/admin/layout.xhtml">
 		<ui:define name="content">
-		
+			<h:form>
+			<p:panelGrid columns="1">
 			<p:carousel var="vinyl" value="#{vinylListBean.vinylList}" headerText="#{msg['vinyls.my']}">
 			
-				<p:panelGrid columns="2" style="width:100%">
+				<p:panelGrid columns="2" style="width:100%" cellpadding="5">
 			            <h:outputText value="#{msg['vinyl.artist']}:" />
 			            <h:outputText value="#{vinyl.artist}" />
 
@@ -77,7 +78,10 @@
 
 				</p:panelGrid>
 
-			</p:carousel>			
+			</p:carousel>
+			<p:commandButton type="button" action="#{vinylListBean.bookedby}" value="#{msg['create']}" icon="ui-icon-document" />
+			</p:panelGrid>
+			</h:form>
 		</ui:define>
 	</ui:composition>
 </h:body>

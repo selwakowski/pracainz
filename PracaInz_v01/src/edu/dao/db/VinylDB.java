@@ -14,7 +14,8 @@ public class VinylDB {
 	String title;
 	String description;
 	int price;
-	int booked;
+	String booked;
+	String bookedby;
 
 	@Embedded List<TrackDB> sideA;
 	@Embedded List<TrackDB> sideB;
@@ -23,12 +24,18 @@ public class VinylDB {
 	
 	public VinylDB (long id, String artist, String title, String description) {
 		this.id = id;
+		this.artist = artist;
 		this.title = title;
 		this.description = description;
 		this.price = 0;
-		this.booked = 0;
+		this.booked = "NIE";
+		this.bookedby = "";
 		this.sideA = new ArrayList<TrackDB>(5);
 		this.sideB = new ArrayList<TrackDB>(5);
+		for (int i = 0; i < 5; i++) {
+			this.sideA.add(new TrackDB("", ""));
+			this.sideB.add(new TrackDB("", ""));
+		}
 	}
 
 	public long getId() {
@@ -71,14 +78,6 @@ public class VinylDB {
 		this.price = price;
 	}
 
-	public int getBooked() {
-		return booked;
-	}
-
-	public void setBooked(int booked) {
-		this.booked = booked;
-	}
-
 	public List<TrackDB> getSideA() {
 		return sideA;
 	}
@@ -93,6 +92,22 @@ public class VinylDB {
 
 	public void setSideB(List<TrackDB> sideB) {
 		this.sideB = sideB;
+	}
+
+	public String getBooked() {
+		return booked;
+	}
+
+	public void setBooked(String booked) {
+		this.booked = booked;
+	}
+
+	public String getBookedby() {
+		return bookedby;
+	}
+
+	public void setBookedby(String bookedby) {
+		this.bookedby = bookedby;
 	}
 
 }

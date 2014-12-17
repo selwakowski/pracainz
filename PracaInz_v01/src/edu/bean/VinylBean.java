@@ -26,6 +26,14 @@ public class VinylBean implements Serializable {
     private List<TrackDB> sideB;
 
 
+    public String saveVinyl() {
+        return navigationBean.toVinylList();
+    }
+
+    public String cancel() {
+        return navigationBean.toVinylList();
+    }
+
     public String doCreate() {
         VinylDao dao = new VinylDao();
         dao.createVinyl(artist, title, description);
@@ -39,7 +47,11 @@ public class VinylBean implements Serializable {
     	this.price = vinylDB.getPrice();
     	this.title = vinylDB.getTitle();
     }
-    
+
+    public void reset() {
+
+    }
+
     @ManagedProperty(value = "#{navigationBean}")
     private NavigationBean navigationBean;
 

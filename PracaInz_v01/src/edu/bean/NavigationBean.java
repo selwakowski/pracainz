@@ -41,13 +41,16 @@ public class NavigationBean implements Serializable {
 	public String toWelcome() {
 		switch (userBean.getUserType()) {
 		case ADMIN:
-			return "/pages/admin/welcome.xhtml";
+			return "/pages/admin/vinylList.xhtml";
 		case CUSTOMER:
 			return "/pages/customer/welcome.xhtml";
 
 		default:
 			return "/pages/login/login.xhtml";
 		}
+	}
+	public String toVinylEdit() {
+		return "/pages/admin/editVinyl.xhtml";
 	}
 
 	public String toUserList() {

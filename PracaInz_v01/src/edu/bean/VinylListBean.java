@@ -34,9 +34,9 @@ public class VinylListBean implements Serializable {
     }
 
     @ManagedProperty(value = "#{vinylBean}")
-    private NavigationBean vinylBean;
+    private VinylBean vinylBean;
 
-    public void setVinylBean(NavigationBean vinylBean) {
+    public void setVinylBean(VinylBean vinylBean) {
 		this.vinylBean = vinylBean;
 	}
 
@@ -53,6 +53,10 @@ public class VinylListBean implements Serializable {
         return vinylList;
     }
 
+    public String newVinyl() {
+        vinylBean.reset();
+        return navigationBean.toVinylEdit();
+    }
     public void setVinylList(List<VinylDB> vinylList) {
         this.vinylList = vinylList;
     }

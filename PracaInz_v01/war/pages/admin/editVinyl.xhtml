@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:x="http://java.sun.com/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:body>
+	<ui:composition template="/template/admin/layout.xhtml">
+		<ui:define name="content">
+			<h:form id="editVinylForm">
+
+				<p:panelGrid columns="2" style="width:100%">
+
+					<p:outputLabel for="artist" value="#{msg['vinyl.artist']}" />
+					<p:inputText id="artist" value="#{vinylBean.artist}" size="40"
+								 required="true" requiredMessage="#{msg['vinyl.artist.required']}">
+					</p:inputText>
+
+					<p:outputLabel for="vinyltitle" value="#{msg['vinyl.title']}" />
+					<p:inputText id="vinyltitle" value="#{vinylBean.title}" size="40"
+								 required="true" requiredMessage="#{msg['vinyl.title.required']}">
+					</p:inputText>
+
+					<p:outputLabel for="description" value="#{msg['vinyl.description']}" />
+					<p:inputText id="description" value="#{vinylBean.description}" size="40">
+					</p:inputText>
+
+					<p:outputLabel for="price" value="#{msg['vinyl.price']}" />
+					<p:inputText id="price" value="#{vinylBean.price}" size="10">
+					</p:inputText>
+
+						<p:panelGrid columns="2" style="width:100%">
+
+							<p:panelGrid columns="2" style="width:100%">
+								<x:facet name="header">
+									SIDE A
+								</x:facet>							
+								<p:dataTable var="trackA" value="#{vinyl.sideA}">
+									<p:outputLabel value="#{msg['track.title']}" />
+									<p:inputText value="#{trackA.title}" size="30">
+									</p:inputText>
+
+									<p:outputLabel value="#{msg['track.length']}" />
+									<p:inputText value="#{trackA.length}" size="30">
+									</p:inputText>
+
+								</p:dataTable>
+							</p:panelGrid>
+
+							<p:panelGrid columns="2" style="width:100%">
+								<x:facet name="header">
+									SIDE B
+								</x:facet>							
+								<p:dataTable var="trackB" value="#{vinyl.sideB}">
+
+									<p:outputLabel value="#{msg['track.title']}" />
+									<p:inputText value="#{trackB.title}" size="8">
+									</p:inputText>
+
+									<p:outputLabel value="#{msg['track.length']}" />
+									<p:inputText value="#{trackB.length}" size="8">
+									</p:inputText>
+
+								</p:dataTable>
+							</p:panelGrid>
+
+						</p:panelGrid>
+
+
+			            <h:outputText value="#{msg['vinyl.booked']}:" />
+			            <h:outputText value="#{vinylBean.booked}" />
+
+			            <h:outputText value="#{msg['vinyl.bookedby']}:" />
+			            <h:outputText value="#{vinylBean.bookedby}" />
+
+					<x:facet name="footer">
+		                <p:commandButton action="saveVinyl" icon="ui-icon-save">
+		                </p:commandButton>
+		                <p:commandButton action="cancel" icon="ui-icon-search">
+		                </p:commandButton>							                
+					</x:facet>
+
+				</p:panelGrid>
+
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
