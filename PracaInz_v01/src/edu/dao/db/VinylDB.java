@@ -14,6 +14,8 @@ public class VinylDB {
 	String title;
 	String description;
 	int price;
+	int booked;
+
 	@Embedded List<TrackDB> sideA;
 	@Embedded List<TrackDB> sideB;
 
@@ -24,8 +26,9 @@ public class VinylDB {
 		this.title = title;
 		this.description = description;
 		this.price = 0;
-		this.sideA = new ArrayList<TrackDB>();
-		this.sideB = new ArrayList<TrackDB>();
+		this.booked = 0;
+		this.sideA = new ArrayList<TrackDB>(5);
+		this.sideB = new ArrayList<TrackDB>(5);
 	}
 
 	public long getId() {
@@ -58,6 +61,22 @@ public class VinylDB {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getBooked() {
+		return booked;
+	}
+
+	public void setBooked(int booked) {
+		this.booked = booked;
 	}
 
 	public List<TrackDB> getSideA() {

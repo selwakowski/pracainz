@@ -13,7 +13,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.faces.validator.ValidatorException;
-import javax.inject.Named;
 
 import edu.dao.UserDao;
 import edu.dao.db.UserDB;
