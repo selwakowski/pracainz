@@ -20,10 +20,26 @@ public class UserBean implements Serializable {
 	private String email;
 	private String mobile;
 
+	public void propagate(UserDB userDB) {
+		setUserTypeId(userDB.getTypeId());
+		this.name = userDB.getName();
+		this.realName = userDB.getRealName();
+		this.mobile = userDB.getMobile();
+		this.email = userDB.getEmail();
+		
+	}
+	public void setUserTypeId(int userTypeId) {
+		
+		for (UserType userType : UserType.values()) {
+			if (userType.getId() == userTypeId) {
+				this.userType = userType;
+			}
+		}
+	}
+
 	public String getRealName() {
 		return realName;
 	}
-
 	public void setRealName(String realName) {
 		this.realName = realName;
 	}
@@ -51,22 +67,5 @@ public class UserBean implements Serializable {
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-	public void propagate(UserDB userDB) {
-		setUserTypeId(userDB.getTypeId());
-		this.name = userDB.getName();
-		this.realName = userDB.getRealName();
-		this.mobile = userDB.getMobile();
-		this.email = userDB.getEmail();
-		
-	}
-	public void setUserTypeId(int userTypeId) {
-		
-		for (UserType userType : UserType.values()) {
-			if (userType.getId() == userTypeId) {
-				this.userType = userType;
-			}
-		}
-	}	
-
 
 }

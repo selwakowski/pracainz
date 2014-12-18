@@ -1,6 +1,10 @@
 package edu.dao.db;
 
-public class TrackDB {
+import java.io.Serializable;
+
+public class TrackDB implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     String title;
     String length;
 

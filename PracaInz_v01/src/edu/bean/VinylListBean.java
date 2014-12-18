@@ -58,7 +58,10 @@ public class VinylListBean implements Serializable {
     }
 
     public String newVinyl() {
-        vinylBean.reset();
+        VinylDao dao = new VinylDao();
+        VinylDB emptyVinyl = dao.createEmptyVinyl();
+        vinylBean.propagate(emptyVinyl);
+
         return navigationBean.toVinylEdit();
     }
     public void setVinylList(List<VinylDB> vinylList) {

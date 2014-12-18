@@ -4,11 +4,14 @@ import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
 import javax.persistence.Embedded;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class VinylDB {
+public class VinylDB implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id long id;
 	String artist;
 	String title;
@@ -30,12 +33,8 @@ public class VinylDB {
 		this.price = 0;
 		this.booked = "NIE";
 		this.bookedby = "";
-		this.sideA = new ArrayList<TrackDB>(5);
-		this.sideB = new ArrayList<TrackDB>(5);
-		for (int i = 0; i < 5; i++) {
-			this.sideA.add(new TrackDB("", ""));
-			this.sideB.add(new TrackDB("", ""));
-		}
+		this.sideA = new ArrayList<TrackDB>();
+		this.sideB = new ArrayList<TrackDB>();
 	}
 
 	public long getId() {

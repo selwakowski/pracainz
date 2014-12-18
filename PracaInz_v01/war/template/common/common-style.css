@@ -7,3 +7,10 @@ body {
 .ui-widget .ui-widget {
     font-size: 80%;
 }
+
+.ui-carousel {
+    width: 900px !important;
+}
+.ui-carousel-viewport {
+    width: 900px !important;
+}

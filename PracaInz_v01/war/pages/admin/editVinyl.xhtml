@@ -11,7 +11,7 @@
 	<ui:composition template="/template/admin/layout.xhtml">
 		<ui:define name="content">
 			<h:form id="editVinylForm">
-
+				<p:fieldset legend="#{msg['vinyl']}" style="margin-bottom:20px">
 				<p:panelGrid columns="2" style="width:100%">
 
 					<p:outputLabel for="artist" value="#{msg['vinyl.artist']}" />
@@ -31,51 +31,130 @@
 					<p:outputLabel for="price" value="#{msg['vinyl.price']}" />
 					<p:inputText id="price" value="#{vinylBean.price}" size="10">
 					</p:inputText>
-
-					<x:facet name="footer">
-		                <p:commandButton action="saveVinyl" icon="ui-icon-save">
-		                </p:commandButton>
-		                <p:commandButton action="cancel" icon="ui-icon-search">
-		                </p:commandButton>							                
-					</x:facet>
 				</p:panelGrid>
+
 				<p:panelGrid columns="2" style="width:100%">
 
-					<p:panelGrid columns="2" style="width:100%">
-						<x:facet name="header">
-							SIDE A
-						</x:facet>
-						<p:dataTable var="trackA" value="#{vinyl.sideA}">
-							<p:outputLabel value="#{msg['track.title']}" />
-							<p:inputText value="#{trackA.title}" size="30">
-							</p:inputText>
+					<p:panel header="SIDE A">
 
-							<p:outputLabel value="#{msg['track.length']}" />
-							<p:inputText value="#{trackA.length}" size="30">
-							</p:inputText>
+						<p:dataTable value="#{vinylBean.sideA}" var="A"  widgetVar="50" editable="true">
+							<x:facet name="header">
+								Track List
+							</x:facet>
+							<p:ajax event="rowEditCancel" listener="#{vinylBean.onCancelA}"  />
+							<p:column>
+								<x:facet name="header">
+									<h:outputText value="#{msg['track.title']}"/>
+								</x:facet>
+								<p:cellEditor>
+									<x:facet name="output">
+										<h:outputText value="#{A.title}"/>
+									</x:facet>
+									<x:facet name="input">
+										<p:inputText value="#{A.title}" style="width:100%"/>
+									</x:facet>
+								</p:cellEditor>
+							</p:column>
+							<p:column>
+								<x:facet name="header">
+									<h:outputText value="#{msg['track.length']}"/>
+								</x:facet>
+								<p:cellEditor>
+									<x:facet name="output">
+										<h:outputText value="#{A.length}"/>
+									</x:facet>
+									<x:facet name="input">
+										<p:inputText value="#{A.length}" />
+									</x:facet>
+								</p:cellEditor>
+							</p:column>
+							<p:column>
+								<p:rowEditor />
+							</p:column>
+
 
 						</p:dataTable>
-					</p:panelGrid>
 
-					<p:panelGrid columns="2" style="width:100%">
-						<x:facet name="header">
-							SIDE B
-						</x:facet>
-						<p:dataTable var="trackB" value="#{vinyl.sideB}">
+						<p:panel header="#{msg['track.new']}">
+							<p:panelGrid columns="2">
+								<p:outputLabel value="#{msg['track.title']}" />
+								<p:inputText value="#{vinylBean.titleA}" size="30" />
+								<p:outputLabel value="#{msg['track.length']}" />
+								<p:inputText value="#{vinylBean.lenA}" size="8" />
+								<x:facet name="footer">
+									<h:commandButton value="#{msg['track.add']}" action="#{vinylBean.addTrackA}"/>
+								</x:facet>
+							</p:panelGrid>
+						</p:panel>
 
-							<p:outputLabel value="#{msg['track.title']}" />
-							<p:inputText value="#{trackB.title}" size="8">
-							</p:inputText>
+					</p:panel>
 
-							<p:outputLabel value="#{msg['track.length']}" />
-							<p:inputText value="#{trackB.length}" size="8">
-							</p:inputText>
+
+					<p:panel header="SIDE B">
+
+						<p:dataTable value="#{vinylBean.sideB}" var="B"  widgetVar="55" editable="true">
+							<x:facet name="header">
+								Track List
+							</x:facet>
+							<p:ajax event="rowEditCancel" listener="#{vinylBean.onCancelB}"  />
+							<p:column>
+								<x:facet name="header">
+									<h:outputText value="#{msg['track.title']}"/>
+								</x:facet>
+								<p:cellEditor>
+									<x:facet name="output">
+										<h:outputText value="#{B.title}"/>
+									</x:facet>
+									<x:facet name="input">
+										<p:inputText value="#{B.title}" style="width:100%"/>
+									</x:facet>
+								</p:cellEditor>
+							</p:column>
+							<p:column>
+								<x:facet name="header">
+									<h:outputText value="#{msg['track.length']}"/>
+								</x:facet>
+								<p:cellEditor>
+									<x:facet name="output">
+										<h:outputText value="#{B.length}"/>
+									</x:facet>
+									<x:facet name="input">
+										<p:inputText value="#{B.length}" />
+									</x:facet>
+								</p:cellEditor>
+							</p:column>
+							<p:column>
+								<p:rowEditor />
+							</p:column>
+
 
 						</p:dataTable>
-					</p:panelGrid>
+
+						<p:panel header="#{msg['track.new']}">
+							<p:panelGrid columns="2">
+								<p:outputLabel value="#{msg['track.title']}" />
+								<p:inputText value="#{vinylBean.titleB}" size="30" />
+								<p:outputLabel value="#{msg['track.length']}" />
+								<p:inputText value="#{vinylBean.lenB}" size="8" />
+								<x:facet name="footer">
+									<h:commandButton value="#{msg['track.add']}" action="#{vinylBean.addTrackB}"/>
+								</x:facet>
+							</p:panelGrid>
+						</p:panel>
+
+					</p:panel>
+
 
 				</p:panelGrid >
-
+				<p:menubar>
+					<x:facet name="options">
+						<p:commandButton  value="#{msg['save']}" action="#{vinylBean.saveVinyl}" icon="ui-icon-save">
+						</p:commandButton>
+						<p:commandButton value="#{msg['cancel']}" action="#{vinylBean.cancel}" icon="ui-icon-cancel">
+						</p:commandButton>
+					</x:facet>
+				</p:menubar>
+			</p:fieldset>
 			</h:form>
 		</ui:define>
 	</ui:composition>

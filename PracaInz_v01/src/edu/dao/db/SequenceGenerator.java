@@ -11,7 +11,7 @@ public class SequenceGenerator {
 	long nextVinylId;
 	
 	public long getNextVinylId() {
-		return nextVinylId++;
+		return ++nextVinylId;
 	}
 
 	public String getId() {
