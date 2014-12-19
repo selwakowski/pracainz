@@ -9,11 +9,12 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<h:outputStylesheet name="/template/common/common-style.css" library="css" />
+	<link type="text/css" rel="stylesheet" href="/template/common/common-style.css?v=2" />
 </h:head>
 
 <h:body>
 	<p:layout id="page" fullPage="true">
-		<p:layoutUnit position="north" size="300" id="header">
+		<p:layoutUnit position="north" size="230" id="header">
 			<ui:insert name="header">
 				<ui:include src="/template/common/header.xhtml" />
 			</ui:insert>
@@ -27,7 +28,7 @@
 				<ui:include src="/template/common/content.xhtml" />
 			</ui:insert>
 		</p:layoutUnit>
-		<p:layoutUnit position="south" size="80" id="footer">
+		<p:layoutUnit position="south" size="50" id="footer">
 			<ui:insert name="footer">
 				<ui:include src="/template/common/footer.xhtml" />
 			</ui:insert>

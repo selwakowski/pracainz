@@ -54,6 +54,7 @@ public class VinylListBean implements Serializable {
     }
 
     public String editVinyl() {
+    	vinylBean.propagate(selectedVinyl);
         return navigationBean.toVinylEdit();
     }
 

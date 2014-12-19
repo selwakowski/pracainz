@@ -53,7 +53,8 @@ public class JarLibraryLoader implements LibraryLoader {
      */
     public boolean load(String name, boolean verify) {
         boolean loaded = false;
-
+        return false;
+/*        
         try {
             Platform platform = Platform.detect();
             JarFile jar = new JarFile(codeSource.getLocation().getPath(), verify);
@@ -77,6 +78,7 @@ public class JarLibraryLoader implements LibraryLoader {
         }
 
         return loaded;
+*/        
     }
 
     /**
@@ -88,7 +90,6 @@ public class JarLibraryLoader implements LibraryLoader {
      * @return A temporary file.
      *
      * @throws IOException when an IO error occurs.
-     */
     private static File extract(String name, InputStream is) throws IOException {
         byte[] buf = new byte[4096];
         int len;
@@ -110,6 +111,7 @@ public class JarLibraryLoader implements LibraryLoader {
 
         return lib;
     }
+     */
 
     /**
      * Generate a list of candidate libraries for the supplied library name and suitable

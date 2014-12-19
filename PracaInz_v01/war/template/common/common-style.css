@@ -1,16 +1,10 @@
 body {
-    font-size: 70%;
+    font-size: 14px;
 }
 .ui-widget {
-    font-size: 70%;
+    font-size: 14px;
 }
 .ui-widget .ui-widget {
-    font-size: 80%;
+    font-size: 12px;
 }
 
-.ui-carousel {
-    width: 900px !important;
-}
-.ui-carousel-viewport {
-    width: 900px !important;
-}

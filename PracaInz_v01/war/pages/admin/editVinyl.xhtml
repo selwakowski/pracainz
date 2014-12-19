@@ -11,8 +11,8 @@
 	<ui:composition template="/template/admin/layout.xhtml">
 		<ui:define name="content">
 			<h:form id="editVinylForm">
-				<p:fieldset legend="#{msg['vinyl']}" style="margin-bottom:20px">
-				<p:panelGrid columns="2" style="width:100%">
+				<p:fieldset legend="#{msg['vinyl']}" style="margin-bottom:10px">
+				<h:panelGrid columns="2" style="width:100%">
 
 					<p:outputLabel for="artist" value="#{msg['vinyl.artist']}" />
 					<p:inputText id="artist" value="#{vinylBean.artist}" size="40"
@@ -31,9 +31,9 @@
 					<p:outputLabel for="price" value="#{msg['vinyl.price']}" />
 					<p:inputText id="price" value="#{vinylBean.price}" size="10">
 					</p:inputText>
-				</p:panelGrid>
+				</h:panelGrid>
 
-				<p:panelGrid columns="2" style="width:100%">
+				<h:panelGrid columns="2" style="width:100%">
 
 					<p:panel header="SIDE A">
 
@@ -76,7 +76,7 @@
 						</p:dataTable>
 
 						<p:panel header="#{msg['track.new']}">
-							<p:panelGrid columns="2">
+							<h:panelGrid columns="2">
 								<p:outputLabel value="#{msg['track.title']}" />
 								<p:inputText value="#{vinylBean.titleA}" size="30" />
 								<p:outputLabel value="#{msg['track.length']}" />
@@ -84,7 +84,7 @@
 								<x:facet name="footer">
 									<h:commandButton value="#{msg['track.add']}" action="#{vinylBean.addTrackA}"/>
 								</x:facet>
-							</p:panelGrid>
+							</h:panelGrid>
 						</p:panel>
 
 					</p:panel>
@@ -131,7 +131,7 @@
 						</p:dataTable>
 
 						<p:panel header="#{msg['track.new']}">
-							<p:panelGrid columns="2">
+							<h:panelGrid columns="2">
 								<p:outputLabel value="#{msg['track.title']}" />
 								<p:inputText value="#{vinylBean.titleB}" size="30" />
 								<p:outputLabel value="#{msg['track.length']}" />
@@ -139,13 +139,13 @@
 								<x:facet name="footer">
 									<h:commandButton value="#{msg['track.add']}" action="#{vinylBean.addTrackB}"/>
 								</x:facet>
-							</p:panelGrid>
+							</h:panelGrid>
 						</p:panel>
 
 					</p:panel>
 
 
-				</p:panelGrid >
+				</h:panelGrid >
 				<p:menubar>
 					<x:facet name="options">
 						<p:commandButton  value="#{msg['save']}" action="#{vinylBean.saveVinyl}" icon="ui-icon-save">

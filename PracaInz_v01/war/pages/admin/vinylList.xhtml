@@ -8,26 +8,40 @@
 	xmlns:x="http://java.sun.com/jsf/core"
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:body>
+
 	<ui:composition template="/template/admin/layout.xhtml">
 	<ui:define name="content">
 		<h:form>
+
 		<p:fieldset legend="#{msg['vinyls.my']}">
 
-			<p:carousel var="vinyl" value="#{vinylListBean.vinylList}" headerText=" " >
+			<p:carousel var="vinyl" value="#{vinylListBean.vinylList}" headerText=" "  numVisible="1" itemStyle="height:400px;width:900px;" effect="easeInStrong">
 			
-				<p:panelGrid columns="2" >
-			            <h:outputText value="#{msg['vinyl.artist']}:" />
-			            <h:outputText value="#{vinyl.artist}" />
+				<h:panelGrid columns="2" cellpadding="5">
 
-			            <h:outputText value="#{msg['vinyl.title']}:" />
-			            <h:outputText value="#{vinyl.title}" />
+					<h:panelGrid columns="2" cellpadding="5">
+				            <h:outputText value="#{msg['vinyl.artist']}:" />
+				            <h:outputText value="#{vinyl.artist}" />
+	
+				            <h:outputText value="#{msg['vinyl.title']}:" />
+				            <h:outputText value="#{vinyl.title}" />
+	
+				            <h:outputText value="#{msg['vinyl.description']}:" />
+				            <h:outputText value="#{vinyl.description}" />
+	
+				            <h:outputText value="#{msg['vinyl.price']}:" />
+				            <h:outputText value="#{vinyl.price}" />
+					</h:panelGrid>
 
-			            <h:outputText value="#{msg['vinyl.description']}:" />
-			            <h:outputText value="#{vinyl.description}" />
-
-			            <h:outputText value="#{msg['vinyl.price']}:" />
-			            <h:outputText value="#{vinyl.price}" />
-				</p:panelGrid>
+		            	<p:commandButton value="#{msg['edit']}" action="#{vinylListBean.editVinyl}" icon="ui-icon-edit">
+		                	<x:setPropertyActionListener
+		                    	value="#{vinyl}" 
+		                    	target="#{vinylListBean.selectedVinyl}" />
+		                </p:commandButton>
+					
+				</h:panelGrid>
+				
+				<h:panelGrid columns="2" cellpadding="5">
 
 					<p:fieldset legend="SIDE A">
 						<p:dataTable var="trackA" value="#{vinyl.sideA}" style="width: 400px">
@@ -39,6 +53,7 @@
 							</p:column>
 						</p:dataTable>
 					</p:fieldset>
+					
 					<p:fieldset legend="SIDE B">
 						<p:dataTable var="trackB" value="#{vinyl.sideB}" style="width: 400px">
 							<p:column headerText="#{msg['track.title']}">
@@ -49,25 +64,22 @@
 							</p:column>
 						</p:dataTable>
 					</p:fieldset>
-
-				<p:panelGrid columns="2">
+				</h:panelGrid>
+				
+				<h:panelGrid columns="2" cellpadding="5">
 
 			     	<h:outputText value="#{msg['vinyl.booked']}:" />
 			        <h:outputText value="#{vinyl.booked}" />
 
 			        <h:outputText value="#{msg['vinyl.bookedby']}:" />
 			        <h:outputText value="#{vinyl.bookedby}" />
+					
+				</h:panelGrid>
 
-					<x:facet name="footer">
-		            	<p:commandButton value="#{msg['edit']}" action="#{vinylListBean.editVinyl}" icon="ui-icon-search">
-		                	<x:setPropertyActionListener
-		                    	value="#{vinyl}" 
-		                    	target="#{vinylListBean.selectedVinyl}" />
-		                </p:commandButton>
-					</x:facet>
-				</p:panelGrid>
 			</p:carousel>
+			
 		</p:fieldset>
+		
 		</h:form>
 	</ui:define>
 	</ui:composition>

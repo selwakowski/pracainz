@@ -10,7 +10,7 @@ public class VinylDao {
 		return OfyService.ofy().load().type(VinylDB.class).id(id).now();
 	}
 
-	public VinylDB createEmptyVinyl() {
+	public static VinylDB createEmptyVinyl() {
 		return new VinylDB(0, "", "", "");
 	}
 

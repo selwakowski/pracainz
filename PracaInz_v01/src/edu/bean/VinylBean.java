@@ -1,6 +1,7 @@
 package edu.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -10,6 +11,7 @@ import javax.faces.bean.SessionScoped;
 import edu.dao.VinylDao;
 import edu.dao.db.TrackDB;
 import edu.dao.db.VinylDB;
+
 import org.primefaces.event.RowEditEvent;
 
 @ManagedBean(name = "vinylBean")
@@ -25,8 +27,8 @@ public class VinylBean implements Serializable {
     private String booked;
     private String bookedby;
 	private String description;
-    private List<TrackDB> sideA;
-    private List<TrackDB> sideB;
+    private List<TrackDB> sideA = new ArrayList<TrackDB>();
+    private List<TrackDB> sideB = new ArrayList<TrackDB>();
 
     private String titleA;
     private String titleB;
@@ -105,6 +107,11 @@ public class VinylBean implements Serializable {
         lenB = "";
     }
 
+    public void reset() {
+    	propagate(VinylDao.createEmptyVinyl());
+    	resetNewTrack();
+    }
+    
     @ManagedProperty(value = "#{navigationBean}")
     private NavigationBean navigationBean;
 
@@ -112,6 +119,11 @@ public class VinylBean implements Serializable {
         this.navigationBean = navigationBean;
     }
 
+    public String createVinyl() {
+    	this.reset();
+    	return navigationBean.toVinylEdit();
+    }
+    
     public String getArtist() {
         return artist;
     }
