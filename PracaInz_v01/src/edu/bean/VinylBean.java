@@ -53,11 +53,11 @@ public class VinylBean implements Serializable {
 
         dao.save(vinyl);
 
-        return navigationBean.toVinylList();
+        return navigationBean.toSaved();
     }
 
     public String cancel() {
-        return navigationBean.toVinylList();
+        return navigationBean.toVinylListRedirect();
     }
 
     public String doCreate() {
@@ -75,8 +75,6 @@ public class VinylBean implements Serializable {
         this.sideA = vinylDB.getSideA();
         this.sideB = vinylDB.getSideB();
         this.id = vinylDB.getId();
-
-        System.out.println(sideA.size());
     }
 
     public void onCancelA(RowEditEvent event) {
@@ -119,10 +117,6 @@ public class VinylBean implements Serializable {
         this.navigationBean = navigationBean;
     }
 
-    public String createVinyl() {
-    	this.reset();
-    	return navigationBean.toVinylEdit();
-    }
     
     public String getArtist() {
         return artist;

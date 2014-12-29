@@ -21,7 +21,7 @@ public class VinylDao {
 	public VinylDB createVinyl(String artist, String title, String description) {
 		long vinylId = OfyService.getNextVinylId();
 		VinylDB vinyl = new VinylDB(vinylId, artist, title, description);
-		OfyService.ofy().save().entity(vinyl).now();
+//		OfyService.ofy().save().entity(vinyl).now();
 		return vinyl;
 	}
 

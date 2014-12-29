@@ -29,10 +29,6 @@ public class VinylListBean implements Serializable {
         }    	
     }
 
-    public VinylListBean() {
-    	init();
-    }
-
     @ManagedProperty(value = "#{vinylBean}")
     private VinylBean vinylBean;
 
@@ -40,31 +36,21 @@ public class VinylListBean implements Serializable {
 		this.vinylBean = vinylBean;
 	}
 
-	@ManagedProperty(value = "#{navigationBean}")
-    private NavigationBean navigationBean;
-
-    public void setNavigationBean(NavigationBean navigationBean) {
-        this.navigationBean = navigationBean;
-    }
-
-
     public List<VinylDB> getVinylList() {
-    	init();
         return vinylList;
     }
 
     public String editVinyl() {
     	vinylBean.propagate(selectedVinyl);
-        return navigationBean.toVinylEdit();
+        return toVinylEdit();
     }
 
     public String newVinyl() {
-        VinylDao dao = new VinylDao();
-        VinylDB emptyVinyl = dao.createEmptyVinyl();
+        VinylDB emptyVinyl = VinylDao.createEmptyVinyl();
         vinylBean.propagate(emptyVinyl);
-
-        return navigationBean.toVinylEdit();
+        return toVinylEdit();
     }
+    
     public void setVinylList(List<VinylDB> vinylList) {
         this.vinylList = vinylList;
     }
@@ -75,6 +61,12 @@ public class VinylListBean implements Serializable {
 
 	public void setSelectedVinyl(VinylDB selectedVinyl) {
 		this.selectedVinyl = selectedVinyl;
+	}
+
+//-------------------navigation
+	
+	public String toVinylEdit() {
+		return "/pages/admin/editVinyl.xhtml";
 	}
 
 }

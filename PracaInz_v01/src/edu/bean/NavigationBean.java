@@ -23,6 +23,7 @@ public class NavigationBean implements Serializable {
 		this.userBean = userBean;
 	}
 
+	
 	public String toLogin() {
 		return "/pages/login/login.xhtml";
 	}
@@ -41,7 +42,7 @@ public class NavigationBean implements Serializable {
 	public String toWelcome() {
 		switch (userBean.getUserType()) {
 		case ADMIN:
-			return "/pages/admin/vinylList.xhtml";
+			return "/pages/admin/welcome.xhtml";
 		case CUSTOMER:
 			return "/pages/customer/welcome.xhtml";
 
@@ -56,11 +57,22 @@ public class NavigationBean implements Serializable {
 	public String toUserList() {
 		return "/pages/admin/userList.xhtml";
 	}
+
 	public String toVinylList() {
 		return "/pages/admin/VinylList.xhtml";
 	}
+
+	public String toVinylListRedirect() {
+		return toVinylList()+REDIRECT;
+	}
+
 	public String toWelcomeRedirect() {
 		return toWelcome()+REDIRECT;
+	}
+
+
+	public String toSaved() {
+		return "/pages/admin/saved.xhtml";
 	}
 
 }
