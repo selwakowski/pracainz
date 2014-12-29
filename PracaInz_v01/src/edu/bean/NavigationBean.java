@@ -75,4 +75,15 @@ public class NavigationBean implements Serializable {
 		return "/pages/admin/saved.xhtml";
 	}
 
+	public String toVinylSaleList() {
+		return "/pages/customer/vinylListForSale.xhtml";
+	}
+
+	public String toVinylListRegistered() {
+		return "/pages/customer/vinylListRegistered.xhtml";
+	}
+
+	public String toVinylSaleListAdmin() {
+		return "/pages/admin/vinylListForSale.xhtml";
+	}
 }

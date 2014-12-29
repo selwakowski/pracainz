@@ -39,9 +39,19 @@ public class MenuBean implements Serializable {
     	return navigationBean.toVinylList();
     }
 
-    public String toVinylSaleList() {
+    public String toVinylListRegistered() {
     	vinylListBean.init();
-    	return navigationBean.toVinylListRedirect();
+    	return navigationBean.toVinylListRegistered();
+    }
+
+    public String toVinylSaleList() {
+        vinylListBean.init();
+        return navigationBean.toVinylSaleList();
+    }
+
+    public String toVinylSaleListAdmin() {
+        vinylListBean.init();
+        return navigationBean.toVinylSaleListAdmin();
     }
 
     public String createVinyl() {

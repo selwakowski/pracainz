@@ -13,7 +13,7 @@
 	<ui:define name="content">
 		<h:form>
 
-		<p:fieldset legend="#{msg['vinyls.my']}">
+		<p:fieldset legend="#{msg['vinyls.my.forsale']}">
 
 			<p:carousel var="vinyl" value="#{vinylListBean.vinylList}" headerText=" "  numVisible="1" itemStyle="height:400px;width:900px;" effect="easeInStrong">
 			
@@ -34,18 +34,18 @@
 					</h:panelGrid>
 
 					<h:panelGrid columns="2" cellpadding="5">
-						<p:commandButton value="#{msg['edit']}" action="#{vinylListBean.editVinyl}" icon="ui-icon-edit">
-							<x:setPropertyActionListener
+							<p:commandButton value="#{msg['edit']}" action="#{vinylListBean.editVinyl}" icon="ui-icon-edit">
+								<x:setPropertyActionListener
 									value="#{vinyl}"
 									target="#{vinylListBean.selectedVinyl}" />
-						</p:commandButton>
-						<p:commandButton value="#{msg['vinyl.forsale']}" action="#{vinylListBean.editVinyl}" icon="ui-icon-edit">
+							</p:commandButton>
+						<p:commandButton value="#{msg['vinyl.withdraw']}" action="#{vinylListBean.editVinyl}" icon="ui-icon-edit">
 							<x:setPropertyActionListener
 									value="#{vinyl}"
 									target="#{vinylListBean.selectedVinyl}" />
 						</p:commandButton>
 					</h:panelGrid>
-					
+
 				</h:panelGrid>
 				
 				<h:panelGrid columns="2" cellpadding="5">

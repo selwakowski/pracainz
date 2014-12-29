@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+				"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3c.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:x="http://java.sun.com/jsf/core"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:x="http://java.sun.com/jsf/core"
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 	<!--  		<h:outputStylesheet name="common-style.css" library="css" />  -->
 </h:head>
@@ -20,7 +20,7 @@
 				<p:menubar>
 					<p:menuitem value="#{msg['users']}" action="#{navigationBean.toUserList}" icon="ui-icon-document" />
 					<p:menuitem value="#{msg['vinyls.my']}" action="#{menuBean.toVinylList}" icon="ui-icon-document" />
-					<p:menuitem value="#{msg['vinyls.my.forsale']}" action="#{menuBean.toVinylSaleList}" icon="ui-icon-document" />
+					<p:menuitem value="#{msg['vinyls.my.forsale']}" action="#{menuBean.toVinylSaleListAdmin}" icon="ui-icon-document" />
 					<p:menuitem value="#{msg['vinyl.new']}" action="#{menuBean.createVinyl}" icon="ui-icon-document" />
 					<x:facet name="options">
 						<p:commandButton action="#{navigationBean.toLoginRedirect}" value="#{msg['logout']}" icon="ui-icon-extlink" />

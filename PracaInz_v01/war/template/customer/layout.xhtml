@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3c.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:x="http://java.sun.com/jsf/core"
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 	<!--  		<h:outputStylesheet name="common-style.css" library="css" />  -->
 </h:head>
 
 <h:body>
-	<h:form>
-	<p:layout id="page" fullPage="true">
-		<p:layoutUnit position="north" size="180" id="header">
-			<ui:insert name="header">
-				<ui:include src="/template/customer/header.xhtml" />
-			</ui:insert>
-		</p:layoutUnit>
-		<p:layoutUnit position="center" id="content">
-			<ui:insert name="content">
-				<ui:include src="/template/customer/content.xhtml" />
-			</ui:insert>
-		</p:layoutUnit>
-		<p:layoutUnit position="south" size="80" id="footer">
-			<ui:insert name="footer">
-				<ui:include src="/template/common/footer.xhtml" />
-			</ui:insert>
-		</p:layoutUnit>
-	</p:layout>
-	</h:form>
-</h:body>
 
+	<ui:composition template="/template/common/layout.xhtml">
+		<ui:define name="header">
+			<ui:include src="/template/common/header.xhtml" />
+			<h:form id="menuForm">
+				<p:menubar>
+					<p:menuitem value="#{msg['vinyls.my.forsale']}" action="#{menuBean.toVinylSaleList}" icon="ui-icon-document" />
+					<p:menuitem value="#{msg['vinyls.registered']}" action="#{menuBean.toVinylListRegistered}" icon="ui-icon-document" />
+					<x:facet name="options">
+						<p:commandButton action="#{navigationBean.toLoginRedirect}" value="#{msg['logout']}" icon="ui-icon-extlink" />
+					</x:facet>
+				</p:menubar>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
+</h:body>
 </html>

@@ -9,11 +9,11 @@
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:body>
 
-	<ui:composition template="/template/admin/layout.xhtml">
+	<ui:composition template="/template/customer/layout.xhtml">
 	<ui:define name="content">
 		<h:form>
 
-		<p:fieldset legend="#{msg['vinyls.my']}">
+		<p:fieldset legend="#{msg['vinyls.registered']}">
 
 			<p:carousel var="vinyl" value="#{vinylListBean.vinylList}" headerText=" "  numVisible="1" itemStyle="height:400px;width:900px;" effect="easeInStrong">
 			
@@ -33,18 +33,11 @@
 				            <h:outputText value="#{vinyl.price}" />
 					</h:panelGrid>
 
-					<h:panelGrid columns="2" cellpadding="5">
-						<p:commandButton value="#{msg['edit']}" action="#{vinylListBean.editVinyl}" icon="ui-icon-edit">
-							<x:setPropertyActionListener
-									value="#{vinyl}"
-									target="#{vinylListBean.selectedVinyl}" />
-						</p:commandButton>
-						<p:commandButton value="#{msg['vinyl.forsale']}" action="#{vinylListBean.editVinyl}" icon="ui-icon-edit">
-							<x:setPropertyActionListener
-									value="#{vinyl}"
-									target="#{vinylListBean.selectedVinyl}" />
-						</p:commandButton>
-					</h:panelGrid>
+		            	<p:commandButton value="#{msg['vinyl.resign']}" action="#{vinylListBean.resignVinyl}" icon="ui-icon-edit">
+		                	<x:setPropertyActionListener
+		                    	value="#{vinyl}" 
+		                    	target="#{vinylListBean.selectedVinyl}" />
+		                </p:commandButton>
 					
 				</h:panelGrid>
 				
@@ -71,16 +64,6 @@
 							</p:column>
 						</p:dataTable>
 					</p:fieldset>
-				</h:panelGrid>
-				
-				<h:panelGrid columns="2" cellpadding="5">
-
-			     	<h:outputText value="#{msg['vinyl.booked']}:" />
-			        <h:outputText value="#{vinyl.booked}" />
-
-			        <h:outputText value="#{msg['vinyl.bookedby']}:" />
-			        <h:outputText value="#{vinyl.bookedby}" />
-					
 				</h:panelGrid>
 
 			</p:carousel>
