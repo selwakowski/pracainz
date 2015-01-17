@@ -1,0 +1,1079 @@
+{
+	"Server": "Apollon V1",
+	"Errorcode": 0,
+	"Infos": 
+	{
+		"Server-Time": 0.38003015518188
+	},
+
+	"Body": 
+	{
+		"town": 
+		{
+			"ID": "b4f57fb2-16bc-441e-8ef5-51ccde0fd754",
+			"name": 32,
+			"level": 13,
+			"is_capital": false,
+			"bonuses": 
+			[
+				
+			],
+
+			"is_endgame": false,
+			"type": 2,
+			"lastConsumption": -606,
+			"OwnerGroup": 0,
+			"GroupYesterday": 0,
+			"GroupAmount": 
+			{
+				"0": 117679
+			},
+
+			"factions": null
+		},
+
+		"resources": 
+		[
+			{
+				"type": 3,
+				"amount": 8287,
+				"capacity": 15050,
+				"income": 1,
+				"price": 142,
+				"trend": -0.05,
+				"priority": 2,
+				"resource_type": 3,
+				"price_factor": 0.66,
+				"consume_amount": 692,
+				"factions": null
+			},
+
+			{
+				"type": 4,
+				"amount": 5091,
+				"capacity": 15050,
+				"income": 1,
+				"price": 132,
+				"trend": 0.47,
+				"priority": 2,
+				"resource_type": 4,
+				"price_factor": 1.11,
+				"consume_amount": 589,
+				"factions": null
+			},
+
+			{
+				"type": 7,
+				"amount": 2109,
+				"capacity": 15050,
+				"income": 1,
+				"price": 196,
+				"trend": -0.03,
+				"priority": 2,
+				"resource_type": 7,
+				"price_factor": 0.67,
+				"consume_amount": 190,
+				"factions": null
+			},
+
+			{
+				"type": 11,
+				"amount": 2801,
+				"capacity": 15050,
+				"income": 1,
+				"price": 275,
+				"trend": 0.18,
+				"priority": 2,
+				"resource_type": 11,
+				"price_factor": 0.71,
+				"consume_amount": 252,
+				"factions": null
+			},
+
+			{
+				"type": 14,
+				"amount": 7043,
+				"capacity": 15050,
+				"income": 1,
+				"price": 220,
+				"trend": 0.03,
+				"priority": 2,
+				"resource_type": 14,
+				"price_factor": 1,
+				"consume_amount": 543,
+				"factions": null
+			},
+
+			{
+				"type": 5,
+				"amount": 1541,
+				"capacity": 15050,
+				"income": 1,
+				"price": 35,
+				"trend": -0.11,
+				"priority": 3,
+				"resource_type": 5,
+				"price_factor": 0.99,
+				"consume_amount": 139,
+				"factions": null
+			},
+
+			{
+				"type": 9,
+				"amount": 5922,
+				"capacity": 15050,
+				"income": 1,
+				"price": 208,
+				"trend": -0.09,
+				"priority": 2,
+				"resource_type": 9,
+				"price_factor": 1.07,
+				"consume_amount": 533,
+				"factions": null
+			},
+
+			{
+				"type": 2,
+				"amount": 2896,
+				"capacity": 15050,
+				"income": 1,
+				"price": 141,
+				"trend": -0.08,
+				"priority": 2,
+				"resource_type": 2,
+				"price_factor": 0.99,
+				"consume_amount": 335,
+				"factions": null
+			},
+
+			{
+				"type": 1,
+				"amount": 5662,
+				"capacity": 15050,
+				"income": 1,
+				"price": 113,
+				"trend": -0.41,
+				"priority": 2,
+				"resource_type": 1,
+				"price_factor": 1,
+				"consume_amount": 655,
+				"factions": null
+			},
+
+			{
+				"type": 16,
+				"amount": 12018,
+				"capacity": 15050,
+				"income": 1,
+				"price": 111,
+				"trend": -0.11,
+				"priority": 1,
+				"resource_type": 16,
+				"price_factor": 0.92,
+				"consume_amount": 1853,
+				"factions": null
+			},
+
+			{
+				"type": 8,
+				"amount": 10630,
+				"capacity": 15050,
+				"income": 1,
+				"price": 268,
+				"trend": -0.05,
+				"priority": 1,
+				"resource_type": 8,
+				"price_factor": 1.21,
+				"consume_amount": 1639,
+				"factions": null
+			},
+
+			{
+				"type": 10,
+				"amount": 10050,
+				"capacity": 15050,
+				"income": 1,
+				"price": 139,
+				"trend": 1.08,
+				"priority": 1,
+				"resource_type": 10,
+				"price_factor": 0.9,
+				"consume_amount": 1550,
+				"factions": null
+			},
+
+			{
+				"type": 13,
+				"amount": 8797,
+				"capacity": 15050,
+				"income": 1,
+				"price": 183,
+				"trend": -0.06,
+				"priority": 1,
+				"resource_type": 13,
+				"price_factor": 0.91,
+				"consume_amount": 1356,
+				"factions": null
+			}
+		],
+
+		"suppliers": 
+		{
+			"3": 
+			[
+				{
+					"userId": "d819c2f9-30bc-c5be-751a-56d5135866ed",
+					"userName": "RUDA",
+					"amount": "2801",
+					"reward": 0,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "6330da3a-14a7-c46e-bd4b-6122ab664b9e",
+					"userName": "PIK4R0",
+					"amount": "2555",
+					"reward": 0,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "e6eb425e-c2aa-4d43-7f3d-cf72c63c7046",
+					"userName": "sebastian2081",
+					"amount": "984",
+					"reward": 0,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "067876c0-a7c2-c313-9b20-395899e4e9e2",
+					"userName": "LOS",
+					"amount": "717",
+					"reward": 0,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "31090e2e-82af-e59f-7319-53d0d315c113",
+					"userName": "mateomateotek",
+					"amount": "696",
+					"reward": 0,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"4": 
+			[
+				{
+					"userId": "e6eb425e-c2aa-4d43-7f3d-cf72c63c7046",
+					"userName": "sebastian2081",
+					"amount": "3222",
+					"reward": 0,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "f72c861d-1ff3-da4c-56b5-bcd8aa88ca50",
+					"userName": "Denarek",
+					"amount": "720",
+					"reward": 0,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "2c421404-0d0e-e600-ed67-6654048f50a6",
+					"userName": "BomboWombo",
+					"amount": "696",
+					"reward": 0,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "51466b39-6072-d3b8-0e4b-820bef222964",
+					"userName": "marynarzyk007",
+					"amount": "672",
+					"reward": 0,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "ba003ec1-7adf-6762-4201-34d213be2e8b",
+					"userName": "Gadziu",
+					"amount": "572",
+					"reward": 0,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"7": 
+			[
+				{
+					"userId": "0b30e6e6-9e18-61ea-15ff-6337427b2472",
+					"userName": "lukfamily",
+					"amount": "1484",
+					"reward": 0,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "452f428b-3926-499a-7f0f-9e89b11d3073",
+					"userName": "8thomas8",
+					"amount": "384",
+					"reward": 0,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "4f504e32-a6ce-47a2-68b3-6cc221ec90c0",
+					"userName": "Chairman007",
+					"amount": "360",
+					"reward": 0,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "422e8e0e-0d1b-0a62-fc98-dcfffde37825",
+					"userName": "=PENDOLINO=",
+					"amount": "354",
+					"reward": 0,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "a9e39e34-426e-e48e-1ddd-8b437d274ecb",
+					"userName": "daks",
+					"amount": "325",
+					"reward": 0,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"11": 
+			[
+				{
+					"userId": "1c993e6d-d08f-5422-f353-c7e43a465ef1",
+					"userName": "mati040194",
+					"amount": "1428",
+					"reward": 0,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "f22e898a-538a-8fd1-c1fd-3e75a6f9aeee",
+					"userName": "Sab Than",
+					"amount": "822",
+					"reward": 0,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "c1dd4754-7b46-078d-3b03-c1e9a7a1e58b",
+					"userName": "Grupa sparia",
+					"amount": "468",
+					"reward": 0,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "1289e53d-20f9-2e3b-3f53-3445e2adb157",
+					"userName": "zygfry\u015b",
+					"amount": "354",
+					"reward": 0,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "dbdcee98-0898-069e-7f5b-0028a9ec2036",
+					"userName": "Budowlaniec123",
+					"amount": "296",
+					"reward": 0,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"14": 
+			[
+				{
+					"userId": "840452b1-a850-2a8e-e217-b16cd19ba17f",
+					"userName": "Brzosti",
+					"amount": "2160",
+					"reward": 0,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "c1dd4754-7b46-078d-3b03-c1e9a7a1e58b",
+					"userName": "Grupa sparia",
+					"amount": "983",
+					"reward": 0,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "1aa0c084-296b-31b8-5430-8370d6f739ca",
+					"userName": "Falconw",
+					"amount": "792",
+					"reward": 0,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "9fffb0ca-7273-1246-01b0-8522bdb54726",
+					"userName": "Agrael12",
+					"amount": "765",
+					"reward": 0,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "03631928-1608-9dc4-b629-8d1aa3b84836",
+					"userName": "BarKam",
+					"amount": "634",
+					"reward": 0,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"5": 
+			[
+				{
+					"userId": "452f428b-3926-499a-7f0f-9e89b11d3073",
+					"userName": "8thomas8",
+					"amount": "504",
+					"reward": 0,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "1c993e6d-d08f-5422-f353-c7e43a465ef1",
+					"userName": "mati040194",
+					"amount": "462",
+					"reward": 0,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "a9e39e34-426e-e48e-1ddd-8b437d274ecb",
+					"userName": "daks",
+					"amount": "435",
+					"reward": 0,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "6330da3a-14a7-c46e-bd4b-6122ab664b9e",
+					"userName": "PIK4R0",
+					"amount": "192",
+					"reward": 0,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "83a8463f-9757-8539-9869-b6acbd309cc4",
+					"userName": "jatrza77",
+					"amount": "147",
+					"reward": 0,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"9": 
+			[
+				{
+					"userId": "86b48193-b12f-eda7-5d4f-868706141c36",
+					"userName": "PrezesPower",
+					"amount": "1966",
+					"reward": 0,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "569133bf-6eb8-7f5b-8994-a23bed9ef1ef",
+					"userName": "OgLoP",
+					"amount": "1146",
+					"reward": 0,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "dbdcee98-0898-069e-7f5b-0028a9ec2036",
+					"userName": "Budowlaniec123",
+					"amount": "834",
+					"reward": 0,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "f22e898a-538a-8fd1-c1fd-3e75a6f9aeee",
+					"userName": "Sab Than",
+					"amount": "639",
+					"reward": 0,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "aadefd4a-766d-0db4-88d0-4a6ae1e84e1f",
+					"userName": "PabloCompany",
+					"amount": "568",
+					"reward": 0,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"2": 
+			[
+				{
+					"userId": "6499c125-b0e7-6db7-bad4-ad6a28f7c51e",
+					"userName": "amigo373",
+					"amount": "1692",
+					"reward": 0,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "0ed26b9c-77b0-d37a-83c0-ddcc7fc4d261",
+					"userName": "Pmakip",
+					"amount": "904",
+					"reward": 0,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "452f428b-3926-499a-7f0f-9e89b11d3073",
+					"userName": "8thomas8",
+					"amount": "540",
+					"reward": 0,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "a9e39e34-426e-e48e-1ddd-8b437d274ecb",
+					"userName": "daks",
+					"amount": "465",
+					"reward": 0,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "e6eb425e-c2aa-4d43-7f3d-cf72c63c7046",
+					"userName": "sebastian2081",
+					"amount": "438",
+					"reward": 0,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"1": 
+			[
+				{
+					"userId": "0b30e6e6-9e18-61ea-15ff-6337427b2472",
+					"userName": "lukfamily",
+					"amount": "2334",
+					"reward": 0,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "51466b39-6072-d3b8-0e4b-820bef222964",
+					"userName": "marynarzyk007",
+					"amount": "1750",
+					"reward": 0,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "6499c125-b0e7-6db7-bad4-ad6a28f7c51e",
+					"userName": "amigo373",
+					"amount": "1682",
+					"reward": 0,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "03631928-1608-9dc4-b629-8d1aa3b84836",
+					"userName": "BarKam",
+					"amount": "1044",
+					"reward": 0,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "a9e39e34-426e-e48e-1ddd-8b437d274ecb",
+					"userName": "daks",
+					"amount": "880",
+					"reward": 0,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"16": 
+			[
+				{
+					"userId": "ca8924b3-64a9-9c0c-01f3-01ce4bdaac28",
+					"userName": "rafszmal",
+					"amount": "5493",
+					"reward": 468,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "6ec29d88-dc2c-410b-40cb-86f3da7629da",
+					"userName": "Grecki82",
+					"amount": "4162",
+					"reward": 341.25,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "93b33101-f215-7256-4a9b-a2999c50d4a0",
+					"userName": "Jabolek",
+					"amount": "3750",
+					"reward": 271.7,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "66c3a471-5a98-87b4-8c8d-52a6bd667f93",
+					"userName": "wgola",
+					"amount": "3420",
+					"reward": 232.05,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "39a4e05e-eab7-16bc-bc18-0dfd0a85c4ef",
+					"userName": "Kristofo",
+					"amount": "3058",
+					"reward": 208,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"8": 
+			[
+				{
+					"userId": "4c39d85c-ac86-9b49-cec6-75e658890c3c",
+					"userName": "Szwadron14",
+					"amount": "3243",
+					"reward": 468,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "ea552cfe-c639-c148-df03-da7dfcdf606e",
+					"userName": "selwacz",
+					"amount": "2921",
+					"reward": 341.25,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "d2cd0177-255f-c67e-8ac9-2d01cce530a0",
+					"userName": "Wielki Zelo",
+					"amount": "2545",
+					"reward": 271.7,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "db21d147-08a0-b15c-251a-c15ae7bb37aa",
+					"userName": "moriosz",
+					"amount": "2255",
+					"reward": 232.05,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "7ba45b86-ce8b-b4c0-65a2-31f35dbac191",
+					"userName": "dols",
+					"amount": "2225",
+					"reward": 208,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"10": 
+			[
+				{
+					"userId": "15651aaa-02ba-29dd-6418-e312ef5743cb",
+					"userName": "Artekus",
+					"amount": "4035",
+					"reward": 468,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "57f5c10e-09b7-5540-cb16-91ceae458b6a",
+					"userName": "FajaTravel",
+					"amount": "3470",
+					"reward": 341.25,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "edfc5785-bb05-f42d-2573-ee6d53171327",
+					"userName": "Karoliuszka",
+					"amount": "3390",
+					"reward": 271.7,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "50c458a4-6ee5-4055-d46a-fd77adcd0e39",
+					"userName": "EMPEGERO",
+					"amount": "3055",
+					"reward": 232.05,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "811ddc9c-6a05-29e9-f31e-0f4a4a52c8b7",
+					"userName": "Fador_ulung",
+					"amount": "2298",
+					"reward": 208,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			],
+
+			"13": 
+			[
+				{
+					"userId": "cd1e9e00-4bde-4e10-8b86-2835c44fc08a",
+					"userName": "Queris",
+					"amount": "3675",
+					"reward": 468,
+					"pos": 1,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "9cee4123-a904-6045-c695-4cb2753fa741",
+					"userName": "daro2010",
+					"amount": "2742",
+					"reward": 341.25,
+					"pos": 2,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "fd174f1e-12c1-4305-709c-c763ad2df1e1",
+					"userName": "Ropek",
+					"amount": "2723",
+					"reward": 271.7,
+					"pos": 3,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "580d8452-5728-e734-502e-929467f8a3d4",
+					"userName": "Eddie Amsel",
+					"amount": "2096",
+					"reward": 232.05,
+					"pos": 4,
+					"titles": 
+					[
+						
+					]
+				},
+
+				{
+					"userId": "d4290409-62ea-b9d5-a62d-48d152557d30",
+					"userName": "Adrian1911",
+					"amount": "2094",
+					"reward": 208,
+					"pos": 5,
+					"titles": 
+					[
+						
+					]
+				}
+			]
+		},
+
+		"toolTip": 
+		{
+			"16": 
+			{
+				"suppliersCount": "25",
+				"userReward": 2
+			},
+
+			"10": 
+			{
+				"suppliersCount": "25",
+				"userReward": 2
+			},
+
+			"13": 
+			{
+				"suppliersCount": "23",
+				"userReward": 2
+			}
+		},
+
+		"depot": 
+		{
+			"ID": "4cc226f1-8ef1-7f92-90d0-f6c367f81619",
+			"location_id": "b4f57fb2-16bc-441e-8ef5-51ccde0fd754",
+			"user_id": "ea552cfe-c639-c148-df03-da7dfcdf606e",
+			"level": "1",
+			"updatedAfter": "-1361879",
+			"isHomeTown": "0"
+		},
+
+		"capitalInfo": 
+		{
+			"leading_capital": "00000000-0000-0000-0000-000000000000",
+			"capital_finished_resources": 0
+		}
+	}
+}
